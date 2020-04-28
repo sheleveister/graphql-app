@@ -1,0 +1,115 @@
+mongoose.connect(
+  'mongodb://localhost:27017/ARCHITECT_DATABASE',
+  { useNewUrlParser: true, useUnifiedTopology: true }
+);
+
+mongo
+
+use ARCHITECT_DATABASE
+
+db.createCollection("architects")
+
+db.architects.insert([
+	{
+	 name: "Zaha Hadid",
+	 cityOfBirth: "Bagdad, Iraq",
+	 country: "British",
+	 dateOfBirth: "31.10.1950",
+	 age: 65,
+	 university: ["Architectural Association School of Architecture, London"],
+	 architectureStyle: ["neo-futurism", "parametricism", "deconstructivism"]
+	},
+	{
+	 name: "Santiago Calatrava Valls",
+	 cityOfBirth: "Valencia, Spain",
+	 country: "Spain",
+	 dateOfBirth: "28.06.1951",
+	 age: 68,
+	 university: ["Polytechnic University of Valencia", "Swiss Federal Institute of Technology"],
+	 architectureStyle: ["neo-futurism", "parametricism", "deconstructivism"]
+	},
+])
+
+db.createCollection("buildings")
+
+db.buildings.insert([
+  {
+    name: "MAXXI",
+    city: "Rome",
+    year: "2010",
+    description: "description 1",
+    architectId: "5ea7006a79a84c9a0a6c9e9f"
+  },
+  {
+    name: "Bridge Pavilion",
+    city: "over the river Ebro",
+    year: "2008",
+    description: "description 2",
+    architectId: "5ea7006a79a84c9a0a6c9e9f"
+  },
+  {
+    name: "Maggie's Centre",
+    city: "United Kingdom",
+    year: "1995",
+    description: "description 3",
+    architectId: "5ea7006a79a84c9a0a6c9e9f"
+  },
+  {
+    name: "Contemporary Arts Center",
+    city: "Ohio",
+    year: "1939",
+    description: "description 4",
+    architectId: "5ea7006a79a84c9a0a6c9e9f"
+  },
+  {
+    name: "Athens Olympic Sports Complex",
+    city: "Ohio",
+    architectId: "5ea7006a79a84c9a0a6c9ea0",
+    year: "1939",
+    description: "description 4"
+  },
+  {
+    name: "Auditorio de Tenerife",
+    city: "Ohio",
+    year: "1939",
+    description: "description 4",
+    architectId: "5ea7006a79a84c9a0a6c9ea0"
+  },
+  {
+    name: "Chords Bridge",
+    city: "Ohio",
+    year: "1939",
+    description: "description 4",
+    architectId: "5ea7006a79a84c9a0a6c9ea0"
+  },
+  {
+    name: "Ciutat de les Arts i les Ciències",
+    city: "Ohio",
+    year: "1939",
+    description: "description 4",
+    architectId: "5ea7006a79a84c9a0a6c9ea0"
+  },
+  {
+    name: "Liège-Guillemins railway station",
+    city: "Ohio",
+    year: "1939",
+    description: "description 4",
+    architectId: "5ea7006a79a84c9a0a6c9ea0"
+  },
+  {
+    name: "Museum of Tomorrow",
+    city: "Ohio",
+    year: "1939",
+    description: "description 4",
+    architectId: "5ea7006a79a84c9a0a6c9ea0"
+  },
+  {
+    name: "Dubai Creek Tower",
+    city: "Ohio",
+    year: "1939",
+    description: "description 4",
+    architectId: "5ea7006a79a84c9a0a6c9ea0"
+  },
+])
+
+db.buildings.drop()
