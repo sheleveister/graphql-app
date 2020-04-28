@@ -6,11 +6,11 @@ const Schema: typeof mongoose.Schema = mongoose.Schema;
 const architectSchema = new Schema({
   name: String,
   cityOfBirth: String,
-  country: String,
   dateOfBirth: String,
-  age: Number,
+  country: String,
   university: [String],
   architectureStyle: [String],
+  buildings: [String],
 });
 
 export default mongoose.model(Model.Architect, architectSchema);

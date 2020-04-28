@@ -1,6 +1,6 @@
-import { GraphQLID, GraphQLInt, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
+import { GraphQLID, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
 import { Model } from '../models/models';
-import Buildings from '../models/building';
+import Building from '../models/building';
 import { BuildingType } from './buildingType';
 
 export const ArchitectType = new GraphQLObjectType({
@@ -15,8 +15,11 @@ export const ArchitectType = new GraphQLObjectType({
     cityOfBirth: {
       type: new GraphQLNonNull(GraphQLString)
     },
-    age: {
-      type: new GraphQLNonNull(GraphQLInt)
+    dateOfBirth: {
+      type: new GraphQLNonNull(GraphQLString)
+    },
+    country: {
+      type: new GraphQLNonNull(GraphQLString)
     },
     university: {
       type: new GraphQLList(GraphQLString)
@@ -26,8 +29,8 @@ export const ArchitectType = new GraphQLObjectType({
     },
     buildings: {
       type: new GraphQLList(BuildingType),
-      resolve(parent) {
-        return Buildings.find({ architectId: parent.id })
+      resolve(parent, args) {
+        return Building.find({ architectId: parent.id })
       }
     }
   }),

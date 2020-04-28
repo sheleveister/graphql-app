@@ -1,6 +1,6 @@
 import { GraphQLID, GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
 import { Model } from '../models/models';
-import Architects from '../models/architect';
+import Architect from '../models/architect';
 import { ArchitectType } from './architectType';
 
 export const BuildingType = new GraphQLObjectType({
@@ -21,10 +21,10 @@ export const BuildingType = new GraphQLObjectType({
     description: {
       type: GraphQLString
     },
-    architect: {
-      type: ArchitectType,
+    architectId: {
+      type: new GraphQLNonNull(ArchitectType),
       resolve(parent) {
-        return Architects.findById(parent.architectId)
+        return Architect.findById(parent.architectId)
       }
     }
   })
