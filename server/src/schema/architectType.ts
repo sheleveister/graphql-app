@@ -1,4 +1,4 @@
-import { GraphQLID, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
+import { GraphQLID, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql';
 import { Model } from '../models/models';
 import Building from '../models/building';
 import { BuildingType } from './buildingType';
@@ -15,8 +15,8 @@ export const ArchitectType = new GraphQLObjectType({
     cityOfBirth: {
       type: new GraphQLNonNull(GraphQLString)
     },
-    dateOfBirth: {
-      type: new GraphQLNonNull(GraphQLString)
+    age: {
+      type: new GraphQLNonNull(GraphQLInt)
     },
     country: {
       type: new GraphQLNonNull(GraphQLString)

@@ -14,19 +14,19 @@ db.architects.insert([
 	 name: "Zaha Hadid",
 	 cityOfBirth: "Bagdad, Iraq",
 	 country: "British",
-	 dateOfBirth: "31.10.1950",
-	 age: 65,
+	 age: 69,
 	 university: ["Architectural Association School of Architecture, London"],
-	 architectureStyle: ["neo-futurism", "parametricism", "deconstructivism"]
+	 architectureStyle: ["neo-futurism", "parametricism", "deconstructivism"],
+	 date: new Date(),
 	},
 	{
 	 name: "Santiago Calatrava Valls",
 	 cityOfBirth: "Valencia, Spain",
 	 country: "Spain",
-	 dateOfBirth: "28.06.1951",
 	 age: 68,
 	 university: ["Polytechnic University of Valencia", "Swiss Federal Institute of Technology"],
-	 architectureStyle: ["neo-futurism", "parametricism", "deconstructivism"]
+	 architectureStyle: ["neo-futurism", "parametricism", "deconstructivism"],
+	 date: new Date(),
 	},
 ])
 
@@ -112,4 +112,164 @@ db.buildings.insert([
   },
 ])
 
+db.createCollection("universities")
+
+db.universities.insert([
+	{
+	 name: "Architectural Association School of Architecture",
+	 date: new Date()
+	},
+	{
+	 name: "Swiss Federal Institute of Technology",
+	 date: new Date()
+	},
+	{
+	 name: "Polytechnic University of Valencia",
+	 date: new Date()
+	},
+	{
+	 name: "Princeton University",
+	 date: new Date()
+	},
+	{
+	 name: "Harvard University",
+	 date: new Date()
+	},
+	{
+   name: "Columbia University",
+   date: new Date()
+  },
+  {
+   name: "Massachusetts Institute of Technology",
+   date: new Date()
+  },
+  {
+   name: "Yale University",
+   date: new Date()
+  },
+  {
+   name: "Stanford University",
+   date: new Date()
+  },
+  {
+   name: "University of Chicago",
+   date: new Date()
+  },
+  {
+   name: "University of Pennsylvania",
+   date: new Date()
+  },
+  {
+   name: "Northwestern University",
+   date: new Date()
+  },
+  {
+   name: "Duke University",
+   date: new Date()
+  },
+  {
+   name: "Johns Hopkins University",
+   date: new Date()
+  },
+  {
+   name: "California Institute of Technology",
+   date: new Date()
+  },
+  {
+   name: "Dartmouth College",
+   date: new Date()
+  },
+  {
+   name: "Brown University",
+   date: new Date()
+  },
+  {
+   name: "University of Notre Dame",
+   date: new Date()
+  }
+])
+
+db.createCollection("styles")
+
+db.styles.insert([
+	{
+	 name: "Islamic",
+	},
+	{
+	 name: "Victorian",
+	},
+	{
+	 name: "Romanesque",
+	},
+	{
+	 name: "Baroque",
+	},
+	{
+	 name: "Tudor",
+	},
+	{
+	 name: "Bauhaus",
+	},
+	{
+	 name: "Neo-classical",
+	},
+	{
+	 name: "Renaissance",
+	},
+	{
+	 name: "Gothic",
+	},
+	{
+	 name: "Modernist",
+	},
+	{
+	 name: "German work federation",
+	},
+	{
+	 name: "Futurism",
+	},
+	{
+	 name: "Constructivism",
+	},
+	{
+	 name: "De Stijl",
+	},
+	{
+	 name: "Expressionism",
+	},
+	{
+	 name: "Art Deco",
+	},
+	{
+	 name: "International Style",
+	},
+	{
+	 name: "Brutalism",
+	},
+	{
+	 name: "Postmodernism",
+	},
+	{
+	 name: "Neomodernism",
+	},
+	{
+	 name: "Critical Regionalism",
+	},
+	{
+	 name: "Deconstructivism",
+	},
+	{
+	 name: "High-tech",
+	},
+	{
+	 name: "Green",
+	},
+	{
+	 name: "Smart",
+	},
+])
+
 db.buildings.drop()
+db.architects.drop()
+db.universities.drop()
+db.styles.drop()

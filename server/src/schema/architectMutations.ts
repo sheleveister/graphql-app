@@ -1,5 +1,5 @@
 import { ArchitectType } from './architectType';
-import { GraphQLID, GraphQLList, GraphQLNonNull, GraphQLString } from 'graphql';
+import { GraphQLID, GraphQLList, GraphQLNonNull, GraphQLString, GraphQLInt } from 'graphql';
 import Architect from '../models/architect';
 
 export const addArchitect = {
@@ -11,8 +11,8 @@ export const addArchitect = {
     cityOfBirth: {
       type: new GraphQLNonNull(GraphQLString)
     },
-    dateOfBirth: {
-      type: new GraphQLNonNull(GraphQLString)
+    age: {
+      type: new GraphQLNonNull(GraphQLInt)
     },
     country: {
       type: new GraphQLNonNull(GraphQLString)
@@ -26,17 +26,18 @@ export const addArchitect = {
   },
   resolve(parent, args) {
     const {
-      name, cityOfBirth, dateOfBirth, country,
+      name, cityOfBirth, age, country,
       university, architectureStyle,
     } = args;
 
     const architect = new Architect({
       name,
       cityOfBirth,
-      dateOfBirth,
+      age,
       country,
       university,
       architectureStyle,
+      date: new Date(),
     });
 
     return architect.save();
@@ -68,8 +69,8 @@ export const updateArchitect = {
     cityOfBirth: {
       type: new GraphQLNonNull(GraphQLString)
     },
-    dateOfBirth: {
-      type: new GraphQLNonNull(GraphQLString)
+    age: {
+      type: new GraphQLNonNull(GraphQLInt)
     },
     country: {
       type: new GraphQLNonNull(GraphQLString)
@@ -83,7 +84,7 @@ export const updateArchitect = {
   },
   resolve(parent, args) {
     const {
-      id, name, cityOfBirth, dateOfBirth, country,
+      id, name, cityOfBirth, country,
       age, university, architectureStyle, buildings
     } = args;
 
@@ -91,8 +92,9 @@ export const updateArchitect = {
       id,
       {
         $set: {
-          name, cityOfBirth, dateOfBirth, country,
-          age, university, architectureStyle
+          name, cityOfBirth, country,
+          age, university, architectureStyle,
+          date: new Date(),
         },
       },
       { new: true }

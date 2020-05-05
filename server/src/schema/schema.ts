@@ -2,6 +2,9 @@ import { GraphQLObjectType, GraphQLSchema } from 'graphql';
 
 import { architect, architects } from './architectQueries';
 import { building, buildings } from './buildingQueries';
+import { universities } from './universitiesQueries';
+import { styles } from './architectureStylesQueries';
+
 import { addArchitect, deleteArchitect, updateArchitect } from './architectMutations';
 import { addBuilding, deleteBuilding, updateBuilding } from './buildingMutations';
 
@@ -17,6 +20,8 @@ const Query = new GraphQLObjectType({
     architects,
     building,
     buildings,
+    universities,
+    styles,
   }
 });
 

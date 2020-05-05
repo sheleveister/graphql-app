@@ -13,6 +13,6 @@ export const architect = {
 export const architects = {
   type: new GraphQLList(ArchitectType),
   resolve() {
-    return Architect.find({});
+    return Architect.find({}).sort({ date: 'DESC' });
   }
 };
