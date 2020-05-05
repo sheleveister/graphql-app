@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  margin-left: auto;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
