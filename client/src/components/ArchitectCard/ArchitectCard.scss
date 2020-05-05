@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.card {
+  display: flex;
+  height: auto;
+  width: 100%;
+  background: white;
+  border: 1px solid lightgray;
+  padding: 10px 10px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+
+  &__item-title {
+    font-weight: 700;
+    color: $color-title-gray;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  &__item-text {
+    display: flex;
+    padding: 5px 0;
+    text-align: left;
+    flex-shrink: 0;
+
+    &--main {
+      color: $color-subtitle-gray;
+      font-weight: 700;
+      margin-right: 5px;
+      flex-shrink: 0;
+    }
+  }
+}

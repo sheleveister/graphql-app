@@ -1,0 +1,50 @@
+@import 'src/styles/variables';
+
+* {
+  box-sizing: border-box;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-deep-gray;
+  width: 200px;
+  height: 100vh;
+  min-width: 200px;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.tab {
+  height: 50px;
+  align-items: center;
+  display: flex;
+  padding-left: 20px;
+  transition: .2s;
+
+  &:hover {
+    cursor: pointer;
+    background: $color-gray;
+  }
+
+  &--active {
+    background: $color-blue;
+
+    &:hover {
+      background: $color-blue;
+    }
+  }
+}
+
+.container {
+  background-color: $color-light-gray;
+  width: 100%;
+  overflow: auto;
+  max-height: 100vh;
+  padding: 10px;
+}
