@@ -8,6 +8,7 @@ import './ArchitectList.scss';
 
 type Props = {
   data?: Data;
+  handleDeleteCard: (id: string, name: string) => void;
 };
 
 type Data = {
@@ -35,7 +36,13 @@ const ArchitectList: React.FC<Props> = (props) => {
 
   return renderQueryResult((data: Data) => (
     <ul className="card-list">
-      {data.architects.map((architect) => <ArchitectCard key={architect.id} architect={architect} />)}
+      {data.architects.map((architect) => (
+        <ArchitectCard
+          key={architect.id}
+          architect={architect}
+          handleDeleteCard={props.handleDeleteCard}
+        />
+      ))}
     </ul>
   ))(queryResult);
 };

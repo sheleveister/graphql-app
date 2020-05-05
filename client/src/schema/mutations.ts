@@ -26,3 +26,11 @@ export const addArchitect = gql`
   }
 }
 `;
+
+export const deleteArchitect = gql`
+  mutation($id: ID) {
+    deleteArchitect(id: $id) {
+      name
+    }
+  }
+`;

@@ -7,7 +7,7 @@ import ModalComponent from '../Modal';
 import ButtonComponent from '../Button';
 import { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-import { addArchitect } from '../../schema/mutation';
+import { addArchitect } from '../../schema/mutations';
 import { architectorsQuery, architectureStylesQuery, universitiesQuery } from '../../schema/queries';
 import { ReactText } from 'react';
 import { LabeledValue } from 'antd/es/select';
@@ -67,23 +67,15 @@ const ArchitectModal: React.FC<{}> = () => {
   const { data: universitiesData } = useQuery<UniversitiesData>(universitiesQuery);
   const { data: stylesData } = useQuery<ArchitectureStylesData>(architectureStylesQuery);
 
-  const addData = () => {
+  const submitData = () => {
     addArchitectData({
       variables: architectDataState,
       refetchQueries: [{ query: architectorsQuery }]
     });
   };
 
-  const setInitialData = () => {
-    setArchitectData(initialArchitectData);
-  };
-
   const handleModalOpen = () => {
     setModalVisible(true);
-  };
-
-  const handleCloseModal = () => {
-    setModalVisible(false);
   };
 
   const handleInputChange = (fieldName: string, value: string) => {
@@ -115,11 +107,10 @@ const ArchitectModal: React.FC<{}> = () => {
 
       <ModalComponent
         title="Add Architect"
-        isFormValid={isFormValid()}
-        addData={addData}
-        setInitialData={setInitialData}
         isVisible={isModalVisible}
-        closeModal={handleCloseModal}
+        isFormValid={isFormValid()}
+        submitData={submitData}
+        closeModal={() => setModalVisible(false)}
       >
         <Form name="basic" {...layout}>
           <InputComponent

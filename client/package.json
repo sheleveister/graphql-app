@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.1.0",
     "@apollo/react-hooks": "^3.1.5",
     "@types/recompose": "^0.30.7",
     "antd": "^4.2.0",

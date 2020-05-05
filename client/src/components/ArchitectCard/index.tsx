@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Architect } from '../ArchitectList';
+import { DeleteOutlined } from '@ant-design/icons';
 
 import './ArchitectCard.scss';
 
 type Props = {
   architect: Architect;
+  handleDeleteCard: (id: string, name: string) => void;
 }
 
 const ArchitectCard: React.FC<Props> = (props) => {
@@ -37,6 +39,10 @@ const ArchitectCard: React.FC<Props> = (props) => {
       <CardItemText
         label="Building names"
         data={buildingsNames}
+      />
+      <DeleteOutlined
+        className="delete-icon"
+        onClick={() => props.handleDeleteCard(id, name)}
       />
     </li>
   )

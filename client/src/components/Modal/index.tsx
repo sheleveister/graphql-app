@@ -5,15 +5,14 @@ type Props = {
   title: string;
   isFormValid: boolean;
   isVisible: boolean;
-  addData: () => void;
-  setInitialData: () => void;
+  submitData: () => void;
   closeModal: () => void;
 }
 
 const ModalComponent: React.FC<Props> = (props) => {
   const handleSubmit = () => {
     props.closeModal();
-    props.addData();
+    props.submitData();
   };
 
   const handleCancel = () => {
